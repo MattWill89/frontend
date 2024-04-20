@@ -27,7 +27,7 @@ function App() {
   // Responsible for loading up information
   // that's returned to us from the backend
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/manage_books')
+    fetch('https://stark-fjord-53787-110ae3a2c7f6.herokuapp.com/manage_books')
     .then(res => res.json())
     .then(books => setBooks(books))
   }, []);
@@ -52,7 +52,7 @@ function App() {
   const handleDelete = (bookId) => {
       console.log(bookId)
 
-      fetch(`http://127.0.0.1:5000/delete_book/${bookId}`)
+      fetch(`https://stark-fjord-53787-110ae3a2c7f6.herokuapp.com/delete_book/${bookId}`)
       .then(res => res.json())
       .then(remainingBooks => setBooks(remainingBooks));
   }
